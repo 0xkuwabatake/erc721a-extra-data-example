@@ -1,66 +1,22 @@
-## Foundry
+# erc721a-extra-data-example
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+## Background
+I was curious about how to implement `_setExtraData` function from [ERC721A](https://github.com/chiru-labs/ERC721A/blob/main/contracts/ERC721A.sol#L1442) contract but I couldn't found one. So, I decided to make one for myself. 
 
-Foundry consists of:
+## About
+This repository is about:
+1. How to directly sets `3 bytes(uint24)` token related extra data at [external mint function](https://github.com/0xkuwabatake/erc721a-extra-data-example/blob/main/src/ERC721AExtraData.sol#L27); 
+2. Get its value via a [public getter function](https://github.com/0xkuwabatake/erc721a-extra-data-example/blob/main/src/ERC721AExtraData.sol#L50);
+3. Preserve its value while token is transferred between non-zero addresses by overriding `_extraData` [function](https://github.com/0xkuwabatake/erc721a-extra-data-example/blob/main/src/ERC721AExtraData.sol#L61).
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
-
-## Documentation
-
-https://book.getfoundry.sh/
+To get to know better, check out [their official docs](https://github.com/chiru-labs/ERC721A/blob/main/docs/erc721a.md#_setextradataat).
 
 ## Usage
-
-### Build
-
-```shell
-$ forge build
-```
-
 ### Test
 
 ```shell
 $ forge test
 ```
 
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+## Important Notes
+It's just an example contract, do NOT blindly copy anything here into production code unless you really know what you are doing.
