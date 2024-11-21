@@ -5,11 +5,11 @@ I was curious about how to implement `_setExtraData` function from [ERC721A](htt
 
 ## About
 This repository is about:
-1. How to directly sets `3 bytes(uint24)` token related extra data at [external mint function](https://github.com/0xkuwabatake/erc721a-extra-data-example/blob/main/src/ERC721AExtraData.sol#L27); 
-2. Get its value via a [public getter function](https://github.com/0xkuwabatake/erc721a-extra-data-example/blob/main/src/ERC721AExtraData.sol#L50);
-3. Preserve its value while token is transferred between non-zero addresses by overriding `_extraData` [function](https://github.com/0xkuwabatake/erc721a-extra-data-example/blob/main/src/ERC721AExtraData.sol#L61).
+1. How to directly sets `3 bytes(uint24)` token related extra data at [external mint function](https://github.com/0xkuwabatake/erc721a-extra-data-example/blob/main/src/ERC721AExtraData.sol#L27)
+2. Get its value via a [public getter function](https://github.com/0xkuwabatake/erc721a-extra-data-example/blob/main/src/ERC721AExtraData.sol#L50)
+3. Preserve its value while token is transferred between non-zero addresses by overriding `_extraData` [function](https://github.com/0xkuwabatake/erc721a-extra-data-example/blob/main/src/ERC721AExtraData.sol#L61)
 
-To get to know better, check out [their official docs](https://github.com/chiru-labs/ERC721A/blob/main/docs/erc721a.md#_setextradataat).
+Check out [their official docs](https://github.com/chiru-labs/ERC721A/blob/main/docs/erc721a.md#_setextradataat) for better understanding.
 
 ## Usage
 ### Test
