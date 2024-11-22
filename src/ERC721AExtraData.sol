@@ -17,13 +17,12 @@ contract ERC721AExtraData is ERC721A {
     constructor() ERC721A("ERC721AExtraData", "721AEXTRA") {}
 
     /// @dev Bulk mint `quantity` of token ID(s) with `extraData` to `msg.sender`.
-    /// ```
+    /// 
     /// Requirements:
     /// - (1) The token at `index` must be initialized.
     ///   See: https://github.com/chiru-labs/ERC721A/blob/main/docs/erc721a.md#_initializeownershipat
     /// - (2) For bulk mints, `index` is the value of _nextTokenId before bulk minting.
     ///   See: https://github.com/chiru-labs/ERC721A/blob/main/docs/erc721a.md#_setextradataat
-    /// ```
     function mint(uint24 extraData, uint256 quantity) external {
         _mint(msg.sender, quantity);
         uint256 i;
@@ -52,12 +51,10 @@ contract ERC721AExtraData is ERC721A {
     }
 
     /// @dev To preserve the value of `previousExtraData` after transferred from `from` to `to`.
-    /// ```
+    /// See: https://github.com/chiru-labs/ERC721A/blob/main/docs/erc721a.md#_extradata
+    /// 
     /// Requirement:
     /// - In this case both `from` and `to` must be non-zero address.
-    /// ```
-    /// See: https://github.com/chiru-labs/ERC721A/blob/main/docs/erc721a.md#_extradata
-    /// ```
     function _extraData(
         address from,
         address to,
